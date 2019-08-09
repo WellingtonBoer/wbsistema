@@ -4,13 +4,12 @@ using System.Text;
 
 namespace wbsistema.ApplicationCore.Entity
 {
-    public class Contato
+    public class ProfissaoCliente
     {
-        public int ContatoId { get; set; }
-        public string Nome { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
+        public int Id { get; set; }
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
+        public int ProfissaoId { get; set; }
+        public Profissao Profissao { get; set; }
     }
 }
