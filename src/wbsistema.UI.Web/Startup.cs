@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using wbsistema.UI.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using wbsistema.Infrastructure.Data;
 
 namespace wbsistema.UI.Web
 {
@@ -39,6 +40,11 @@ namespace wbsistema.UI.Web
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<ClienteContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
