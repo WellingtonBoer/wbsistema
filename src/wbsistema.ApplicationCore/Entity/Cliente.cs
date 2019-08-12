@@ -18,5 +18,6 @@ namespace wbsistema.ApplicationCore.Entity
         public string CPF { get; set; }
         public ICollection<Contato> Contatos { get; set; }
         public ICollection<ProfissaoCliente> ProfissaoClientes { get; set; }
+        public Endereco Endereco { get; set; }
     }
 }
